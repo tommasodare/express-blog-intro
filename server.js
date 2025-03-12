@@ -21,43 +21,42 @@ const posts = [
     },
     {
         title: "Cracker alla Barbabietola" ,
-        content: "Ricetta Cracker" ,
+        content: "Ricetta Cracker alla Barbabietola" ,
         image: "/public/cracker_barbabietola.jpeg",
-        tag: ["dolce", "ricetta", "fattoincasa"]
+        tag: ["aperitivo", "salato", "barbabietola"]
     },
     {
         title: "Pane Fritto Dolce" ,
-        content: "Ricetta Pane" ,
+        content: "Ricetta Pane Fritto Dolce" ,
         image: "/public/pane_fritto_dolce.jpeg",
-        tag: ["dolce", "ricetta", "fattoincasa"]
+        tag: ["pane", "ricetta", "fritto"]
     },
     {
-        title: "Pasta Barbabietola" ,
-        content: "Ricetta Pasta" ,
+        title: "Pasta alla Barbabietola" ,
+        content: "Ricetta Pasta alla Barbabietola" ,
         image: "/public/pasta_barbabietola.jpeg",
-        tag: ["dolce", "ricetta", "fattoincasa"]
+        tag: ["primo", "barbabietola", "fattoincasa"]
     },
     {
         title: "Torta Paesana" ,
-        content: "Ricetta Torta" ,
+        content: "Ricetta Torta Paesana" ,
         image: "/public/torta_paesana.jpeg",
-        tag: ["dolce", "ricetta", "fattoincasa"]
+        tag: ["dolce", "ingredienti", "fattoincasa"]
     }
 ]
 
 app.get('/bacheca', (req, res) => {
     
-    /* const titoli = posts.map(post => post.title);
-    res.json(titoli); */
+    const titoli = posts.map(post => post.title);
     
-    /* const tags = posts.map(tag => tag.tag)
-    res.json(tags) */
+    const tags = posts.map(tag => tag.tag)
 
     const images = []
     for (let index = 0; index < posts.length; index++) {
         const image = posts[index].image;
         images.push(image)
     }
-    res.json(images)
+    
+    res.json(posts)
 
 })
