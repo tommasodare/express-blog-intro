@@ -14,33 +14,39 @@ app.get('/', (req, res) => {
 
 const posts = [
     {
-        titol: "Ciambellone" ,
+        title: "Ciambellone" ,
         content: "Ricetta Ciambellone" ,
-        image: "/images/ciambellone.jpeg",
+        image: "/public/ciambellone.jpeg",
         tag: ["dolce", "ricetta", "fattoincasa"]
     },
     {
-        titol: "Cracker alla Barbabietola" ,
+        title: "Cracker alla Barbabietola" ,
         content: "Ricetta Cracker" ,
-        image: "/images/cracker_barbabietola.jpeg",
+        image: "/public/cracker_barbabietola.jpeg",
         tag: ["dolce", "ricetta", "fattoincasa"]
     },
     {
-        titol: "Pane Fritto Dolce" ,
+        title: "Pane Fritto Dolce" ,
         content: "Ricetta Pane" ,
-        image: "/images/pane_fritto_dolce.jpeg",
+        image: "/public/pane_fritto_dolce.jpeg",
         tag: ["dolce", "ricetta", "fattoincasa"]
     },
     {
-        titol: "Pasta Barbabietola" ,
+        title: "Pasta Barbabietola" ,
         content: "Ricetta Pasta" ,
-        image: "/images/pasta_barbabietola.jpeg",
+        image: "/public/pasta_barbabietola.jpeg",
         tag: ["dolce", "ricetta", "fattoincasa"]
     },
     {
-        titol: "Torta Paesana" ,
+        title: "Torta Paesana" ,
         content: "Ricetta Torta" ,
-        image: "/images/torta_paesana.jpeg",
+        image: "/public/torta_paesana.jpeg",
         tag: ["dolce", "ricetta", "fattoincasa"]
     }
 ]
+
+app.get('/bacheca', (req, res) => {
+    
+    res.json(posts)
+
+})
