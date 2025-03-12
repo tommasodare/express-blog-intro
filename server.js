@@ -9,7 +9,7 @@ app.listen(port, () => {
 })
 
 app.get('/', (req, res) => {
-    res.send("Server del mio blog");
+    res.send("<h1>Server del mio blog</h1>");
 })
 
 const posts = [
@@ -47,6 +47,17 @@ const posts = [
 
 app.get('/bacheca', (req, res) => {
     
-    res.json(posts)
+    /* const titoli = posts.map(post => post.title);
+    res.json(titoli); */
+    
+    /* const tags = posts.map(tag => tag.tag)
+    res.json(tags) */
+
+    const images = []
+    for (let index = 0; index < posts.length; index++) {
+        const image = posts[index].image;
+        images.push(image)
+    }
+    res.json(images)
 
 })
